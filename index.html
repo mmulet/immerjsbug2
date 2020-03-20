@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Immer Bug Test2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div>Check the console to see if the tests passed</div>
+    <div>
+        <h2>If the tests pass you should see</h2>
+        <ol>
+            <li>esm test pass</li>
+        </ol>
+    </div>
+    <div>
+        <h2>If the tests fail you should see</h2>
+        <ol>
+            <li>Uncaught ReferenceError: process is not defined</li>
+        </ol>
+    </div>
+    <div>
+        <h2>Note</h2>
+        <p>
+            Defining 
+            process.env.Node_ENV will work as a workaround. See index.html
+        </p>
+    </div>
+    <script>
+        //Uncomment below for a workaround
+
+        // let process = {
+        //     env: {
+        //         'NODE_ENV': "production"
+        //     }
+        // }
+    </script>
+    <script type="module" src="./src/testESM.js"></script>
+</body>
+
+</html>
